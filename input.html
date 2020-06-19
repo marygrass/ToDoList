@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+
+body {
+  height:60vh;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  flex-direction:column;
+  font-family:sans-serif;
+}
+
+.form {
+width:50%;
+  position:relative;
+  height: 50px;
+overflow:hidden;
+}
+
+.form input {
+  width:100%;
+  height:100%;
+  color:#595f6e;
+  padding-top:10px;
+  border:none;
+  outline:none;
+  
+}
+
+.form label {
+  position:absolute;
+  bottom:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+pointer-events:none;
+  border-bottom:1px solid grey;
+}
+
+.form label::after {
+  content:"";
+  position:absolute;
+  height:100%;
+  left:0px;
+  bottom:-1px;
+  width:100%;
+  border-bottom:3px solid #5fa8d3;
+  transform:translateX(-100%);
+  transition: all 300ms ease;
+ 
+}
+
+.content-name {
+  
+position:absolute;
+  bottom:5px;
+  left:0px;
+  transition: all 300ms ease;
+}
+
+.form input:focus + .label-name .content-name, 
+.form input:valid + .label-name .content-name {
+  transform:translateY(-150%);
+  font-size:14px;
+  color: #5fabd3;
+}
+
+.form input:focus + .label-name::after, 
+.form input:valid + .label-name::after {
+  transform:translateX(0%);
+}
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Animation</h1>
+<div class="form">
+  
+  <input type="text" id="name"  autocomplete="off" required> 
+  <label for="name" class="label-name">
+    <span class="content-name">Name</span>
+    
+  </label>
+
+</div>
+</body>
+</html>
